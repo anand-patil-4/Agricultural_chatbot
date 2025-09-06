@@ -1,0 +1,28 @@
+[project]
+name = "agriculturalchatbot"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "aiohttp>=3.12.15",
+    "aiosignal>=1.4.0",
+    "async-timeout>=5.0.1",
+    "attrs>=25.3.0",
+    "blinker>=1.9.0",
+    "certifi>=2025.8.3",
+    "charset-normalizer>=3.4.3",
+    "click>=8.1.8",
+    "colorama>=0.4.6",
+    "flask>=3.1.2",
+    "frozenlist>=1.7.0",
+    "google-generativeai>=0.8.5",
+    "gtts>=2.5.4",
+    "markupsafe>=3.0.2",
+    "multidict>=6.6.4",
+    "python-dotenv>=1.1.1",
+    "tqdm>=4.67.1",
+    "urllib3>=2.5.0",
+    "werkzeug>=3.1.3",
+    "yarl>=1.20.1",
+]
