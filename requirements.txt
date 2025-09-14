@@ -21,3 +21,5 @@ google-generativeai
 streamlit
 openai-whisper
 pyttsx3
+edge-tts
+whisper
