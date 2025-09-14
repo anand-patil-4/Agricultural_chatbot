@@ -20,6 +20,7 @@ dependencies = [
     "gtts>=2.5.4",
     "markupsafe>=3.0.2",
     "multidict>=6.6.4",
+    "openai-whisper>=20250625",
     "python-dotenv>=1.1.1",
     "streamlit>=1.49.1",
     "tqdm>=4.67.1",

@@ -19,3 +19,4 @@ Werkzeug
 yarl
 google-generativeai
 streamlit
+openai-whisper
