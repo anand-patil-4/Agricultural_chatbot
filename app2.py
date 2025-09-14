@@ -3,8 +3,8 @@ import random
 import string
 import streamlit as st
 from dotenv import load_dotenv
-from gtts import gTTS
 import google.generativeai as genai
+import pyttsx3
 
 # ----------------- CONFIG -----------------
 load_dotenv()
@@ -36,11 +36,12 @@ def get_answer_gemini_stream(question: str) -> str:
 
 # ----------------- TEXT TO SPEECH -----------------
 def text_to_audio(text: str, filename: str):
-    """Convert text to MP3 using gTTS"""
-    tts = gTTS(text)
+    """Convert text to MP3 using pyttsx3 (offline & faster)"""
+    engine = pyttsx3.init()
     path = f"audio/{filename}.mp3"
     os.makedirs("audio", exist_ok=True)
-    tts.save(path)
+    engine.save_to_file(text, path)
+    engine.runAndWait()
     return path
 
 # ----------------- STREAMLIT APP -----------------
@@ -75,10 +76,7 @@ def main():
         with open(temp_path, "wb") as f:
             f.write(audio_file.read())
 
-        # ⚡ Option 1: HuggingFace (slower)
-        # transcript = process_audio_hf(temp_path)
-
-        # ⚡ Option 2: Local Whisper (faster, requires `pip install openai-whisper`)
+        # ⚡ Option 1: Local Whisper (preferred, if installed)
         try:
             import whisper
             model = whisper.load_model("base")  # change to "small" or "medium" for better accuracy

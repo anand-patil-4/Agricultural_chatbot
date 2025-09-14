@@ -20,3 +20,4 @@ yarl
 google-generativeai
 streamlit
 openai-whisper
+pyttsx3
